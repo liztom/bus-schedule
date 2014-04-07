@@ -1,0 +1,12 @@
+<% content_for(:title, "Bus Timetable") %>
+
+<h1>Bus Timetable</h1>
+
+<h3>Buses:</h3>
+<ul>
+<% @buses.each do |bus| %>
+  <li><%= link_to bus.name, bus_path(bus.slug) %></li>
+<% end %>
+</ul>
+
+<%= render "form" %>

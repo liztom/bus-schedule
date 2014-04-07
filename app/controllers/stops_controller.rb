@@ -20,6 +20,7 @@ class StopsController < ApplicationController
 
   def show
     @stop = Stop.find(params[:id])
+    @buses = Bus.all
     @stoptime = Stoptime.new
   end
 

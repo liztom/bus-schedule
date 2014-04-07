@@ -1,0 +1,14 @@
+<%= render('layouts/errors', object: @bus) %>
+
+<%= form_for(@bus) do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :line_id %>
+    <%= collection_select(:bus, :line_id, @lines, :id, :name, {:prompt => true})
+ %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

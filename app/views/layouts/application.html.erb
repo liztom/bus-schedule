@@ -12,6 +12,14 @@
     <%= flash[:notice] %>
 
     <%= yield %>
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "List of Lines", lines_path %></li>
+        <li><%= link_to "List of Stations", stations_path %></li>
+        <li><%= link_to "List of Buses", buses_path %></li>
+        <li><%= link_to "List of Stops", stops_path %></li>
+      </ul>
+    </nav>
   </div>
 </body>
 </html>

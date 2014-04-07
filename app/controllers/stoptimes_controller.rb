@@ -21,6 +21,6 @@ class StoptimesController < ApplicationController
   private
 
   def stoptime_params
-    params.require(:stoptime).permit(:name, :stop_id)
+    params.require(:stoptime).permit(:name, :bus_id, :stop_id)
   end
 end

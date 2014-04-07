@@ -6,10 +6,17 @@
 <ul>
 <% @lines.each do |line| %>
   <li><%= link_to line.name, line_path(line.slug) %></li>
+  <ul>
+  <% line.stations.each do |station| %>
+    <li><%= link_to station.name, station_path(station.slug) %></li>
+    Times:
+    <% line.station_stop(station).stoptimes.each do |stoptime| %>
+      <%= stoptime.name.strftime("%I:%M %p") %>
+    <% end %>
+  <% end %>
+  </ul>
 <% end %>
 </ul>
 
 <%= render "form" %>
 
-<%= link_to "List of Stations", stations_path, :class => "btn btn-primary" %>
-<%= link_to "List of Stops", stops_path, :class => "btn btn-primary" %>

@@ -39,6 +39,7 @@ class LinesController < ApplicationController
 
   def destroy
     @line = Line.find(params[:id])
+    Stop.destroy_all "line_id = #{@line.id}"
     @line.destroy
     redirect_to lines_path
   end

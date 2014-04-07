@@ -5,7 +5,7 @@
 <h3>Times at this stop:</h3>
 <ul>
   <% @stop.stoptimes.each do |stoptime| %>
-    <li><%= stoptime.name.strftime("%I:%M %p") %>  <%= link_to "Delete", stoptime_path(stoptime),
+    <li>Bus <%= stoptime.bus.name %> will stop at <%= stoptime.name.strftime("%I:%M %p") %>  <%= link_to "Delete", stoptime_path(stoptime),
                                                   :confirm => "Are you sure?",
                                                   :method => "delete",
                                                   :class => "btn btn-danger btn-xs" %></li>
@@ -15,7 +15,6 @@
 <h4>Add Stop Time</h4>
 <%= render '/stoptimes/form' %>
 
-<%= link_to "List of Stops", stops_path, :class => "btn btn-primary" %>
 <%= link_to "Edit Stop", edit_stop_path, :class => "btn btn-success" %>
 <%= link_to "Delete Stop", stop_path(@stop),
                               :confirm => "Are you sure?",
@@ -23,6 +22,5 @@
                               :class => "btn btn-danger" %>
 
 <br />
+<br />
 
-<%= link_to "List of Lines", lines_path, :class => "btn btn-primary" %>
-<%= link_to "List of Stations", stations_path, :class => "btn btn-primary" %>

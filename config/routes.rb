@@ -8,4 +8,6 @@ BusTimetable::Application.routes.draw do
   resources :stops, :except => [:new]
 
   resources :stoptimes, :only => [:create, :destroy]
+
+  resources :buses, :except => [:new]
 end

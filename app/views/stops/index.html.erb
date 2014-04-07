@@ -1,0 +1,20 @@
+<% content_for(:title, "Bus Timetable") %>
+
+<h1>Bus Timetable</h1>
+
+<h3>Stops:</h3>
+<ul>
+<% @stops.each do |stop| %>
+  <li>Line: <%= stop.line.name %>, Station: <%= stop.station.name %>, Time: <%= stop.stoptime.strftime('%I:%M %p') %>
+    <%= link_to "Edit", edit_stop_path(stop), :class => "btn btn-success btn-xs" %>
+    <%= link_to "Delete", stop_path(stop),
+                          :confirm => "Are you sure?",
+                          :method => "delete",
+                          :class => "btn btn-danger btn-xs"%></li>
+<% end %>
+</ul>
+
+<%= render "form" %>
+
+<%= link_to "List of Lines", lines_path, :class => "btn btn-primary" %>
+<%= link_to "List of Stations", stations_path, :class => "btn btn-primary" %>

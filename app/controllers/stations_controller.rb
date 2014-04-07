@@ -9,10 +9,10 @@ class StationsController < ApplicationController
     @station = Station.new(station_params)
     if @station.save
       @station.update(:slug => ("#{@station.id}-#{@station.name}").parameterize)
-      flash[:notice]
+      flash[:notice] = "Your station was added!"
       redirect_to "/stations/#{@station.slug}"
     else
-      flash[:alert]
+      flash[:alert] = "Try again."
       render 'index'
     end
   end

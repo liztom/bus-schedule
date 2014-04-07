@@ -1,0 +1,19 @@
+<% content_for(:title, "#{@line.name} | Bus Timetable") %>
+
+<h1><%= @line.name %></h1>
+
+<h3>Lines serving this line:</h3>
+<ul>
+
+<li></li>
+
+</ul>
+
+<%= link_to "List of Lines", lines_path, :class => "btn btn-primary" %>
+<%= link_to "Edit Line", edit_line_path, :class => "btn btn-success" %>
+<%= link_to "Delete Line", line_path(@line),
+                              :confirm => "Are you sure?",
+                              :method => "delete",
+                              :class => "btn btn-danger" %>
+
+

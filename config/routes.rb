@@ -5,6 +5,7 @@ BusTimetable::Application.routes.draw do
 
   resources :lines, :except => [:new]
 
-  resources :stops, :except => [:new, :show]
+  resources :stops, :except => [:new]
 
+  resources :stoptimes, :only => [:create, :destroy]
 end

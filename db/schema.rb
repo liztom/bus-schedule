@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140407162625) do
+ActiveRecord::Schema.define(version: 20140407190722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,13 @@ ActiveRecord::Schema.define(version: 20140407162625) do
   create_table "stops", force: true do |t|
     t.integer  "station_id"
     t.integer  "line_id"
-    t.time     "stoptime"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "stoptimes", force: true do |t|
+    t.time    "name"
+    t.integer "stop_id"
   end
 
 end

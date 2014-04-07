@@ -6,6 +6,18 @@
 <ul>
 <% @stations.each do |station| %>
   <li><%= link_to station.name, station_path(station.slug) %></li>
+  <ul>
+  <% station.lines.each do |line| %>
+    <li>Line: <%= line.name %></li>
+    <ul>
+      <li>Times:
+      <% line.station_stop(station).stoptimes.each do |stoptime| %>
+        <%= "#{stoptime.name.strftime('%I:%M %p')}" %>,
+      <% end %>
+      </li>
+    </ul>
+  <% end %>
+  </ul>
 <% end %>
 </ul>
 

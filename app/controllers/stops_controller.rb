@@ -20,6 +20,7 @@ class StopsController < ApplicationController
 
   def show
     @stop = Stop.find(params[:id])
+    @stoptime = Stoptime.new
   end
 
   def edit
@@ -48,6 +49,6 @@ class StopsController < ApplicationController
   private
 
   def stop_params
-    params.require(:stop).permit(:stoptime, :line_id, :station_id)
+    params.require(:stop).permit(:line_id, :station_id)
   end
 end

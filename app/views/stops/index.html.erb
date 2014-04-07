@@ -5,7 +5,9 @@
 <h3>Stops:</h3>
 <ul>
 <% @stops.each do |stop| %>
-  <li>Line: <%= stop.line.name %>, Station: <%= stop.station.name %>, Time: <%= stop.stoptime.strftime('%I:%M %p') %>
+  <li><%= link_to "Line: #{stop.line.name} - Station: #{stop.station.name}",
+                  stop_path(stop) %>
+
     <%= link_to "Edit", edit_stop_path(stop), :class => "btn btn-success btn-xs" %>
     <%= link_to "Delete", stop_path(stop),
                           :confirm => "Are you sure?",

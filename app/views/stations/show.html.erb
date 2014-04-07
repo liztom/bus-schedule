@@ -4,9 +4,9 @@
 
 <h3>Lines serving this station:</h3>
 <ul>
-
-<li></li>
-
+<% @station.lines.each do |line| %>
+  <li><h4><%= link_to line.name, line_path(line.slug) %></h4></li>
+<% end %>
 </ul>
 
 <%= link_to "List of Stations", stations_path, :class => "btn btn-primary" %>
@@ -16,5 +16,8 @@
                               :method => "delete",
                               :class => "btn btn-danger" %>
 
+<br />
 
 <%= link_to "List of Lines", lines_path, :class => "btn btn-primary" %>
+<%= link_to "List of Stops", stops_path, :class => "btn btn-primary" %>
+

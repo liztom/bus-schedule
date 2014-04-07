@@ -2,11 +2,11 @@
 
 <h1><%= @line.name %></h1>
 
-<h3>Lines serving this line:</h3>
+<h3>Stations served by this line:</h3>
 <ul>
-
-<li></li>
-
+<% @line.stations.each do |station| %>
+  <li><h4><%= link_to station.name, station_path(station.slug) %></h4></li>
+<% end %>
 </ul>
 
 <%= link_to "List of Lines", lines_path, :class => "btn btn-primary" %>
@@ -16,4 +16,8 @@
                               :method => "delete",
                               :class => "btn btn-danger" %>
 
+<br />
+
+<%= link_to "List of Stations", stations_path, :class => "btn btn-primary" %>
+<%= link_to "List of Stops", stops_path, :class => "btn btn-primary" %>
 

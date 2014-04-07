@@ -1,0 +1,10 @@
+<%= render('layouts/errors', object: @stoptime) %>
+
+<%= form_for(@stoptime) do |f| %>
+  <%= f.hidden_field :stop_id, value: @stop.id %>
+  <div class="form-group">
+    <%= f.label "Time" %>
+    <%= f.time_field :name %>
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= content_for(:title, "Edit #{@station.name} | Bus Timetable") %>
+<h2>Edit <%= @station.name %></h2>
+  <%= render 'form' %>
+<%= link_to "Cancel", stations_path, :class => "btn btn-danger" %>

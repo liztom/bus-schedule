@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'githubrepo'
+gem 'd3-rails'
 
 group :development do
   gem 'better_errors'
